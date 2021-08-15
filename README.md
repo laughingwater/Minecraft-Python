@@ -32,7 +32,7 @@ pip install git+https://github.com/pokepetter/ursina.git
 
 Now, run this in git bash or in your terminal
 ```
-git clone https://github.com/laughingwater/MinecraftPython
+git clone https://github.com/laughingwater/Minecraft-Python
 ```
 This will create a folder called "MinecraftPython" into your current directory
 
