@@ -17,7 +17,7 @@ made minecraft in python using the ursina engine!
     Optional dependencies must be installed manually.
 
 # Setup
-You will need to install `ursina` by typing this command in your terminal:
+You will need to install [ursina](https://www.ursinaengine.org/) by typing this command in your terminal:
 ```
 pip install ursina
 ```
