@@ -49,10 +49,7 @@ class Voxel(Button):
                 if block_pick == 3: tex = brick_texture
                 if block_pick == 4: tex = stone_texture
                 voxel = Voxel(position= self.position + mouse.normal,texture = tex)
-        
-        
-            
-    
+         
 
 class Sky(Entity):
 
@@ -130,6 +127,9 @@ def update():
     if held_keys['4']: 
         block_pick = 4
         Hotbar = ItemShow("assets/stone.png")
+
+
+    
 
 
 
