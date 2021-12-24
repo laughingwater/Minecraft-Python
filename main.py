@@ -146,6 +146,6 @@ Hotbar = ItemShow()
 
 if __name__ == '__main__':  
     window.title = "Minecraft python edition"
-    window.exit_button.visible = False
+    window.exit_button.visible = True
     window.borderless = False
     app.run()
