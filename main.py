@@ -1,5 +1,6 @@
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
+import time
 
 #colors
 red = color.red
@@ -133,11 +134,11 @@ def update():
 
 
 
-for n in range(20):
-    for m in range(20):
+for n in range(10):
+    for m in range(10):
         voxel = Voxel(position = (m,0,n))
-        for i in range(1):
-            voxel = Voxel(position = (m,i-1,n),texture = dirt_texture)
+        # for i in range(1):
+        #     voxel = Voxel(position = (m,i-1,n),texture = dirt_texture)
 
 
 #more thing loading
