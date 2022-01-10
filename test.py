@@ -1,24 +1,16 @@
-from ursina import *
+import asyncio
+import time
 
-app = Ursina()
+async def say_after(delay, what):
+    await asyncio.sleep(delay)
+    print(what)
 
-class Player(Entity):
+async def main():
+    print(f"started at {time.strftime('%X')}")
 
-    def update(self):
-        self.direction = Vec3(
-            self.forward * (held_keys['w'] - held_keys['s'])
-            + self.right * (held_keys['d'] - held_keys['a'])
-            ).normalized()  # get the direction we're trying to walk in.
+    await say_after(1, 'hello')
+    await say_after(2, 'world')
 
-        origin = self.world_position + (self.up*.5) # the ray should start slightly up from the ground so we can walk up slopes or walk over small objects.
-        hit_info = raycast(origin , self.direction, ignore=(self,), distance=3, debug=False)
-        if not hit_info.hit:
-            self.position += self.direction * 5 * time.dt
+    print(f"finished at {time.strftime('%X')}")
 
-Player(model='cube', origin_y=-.5, color=color.orange)
-wall_left = Entity(model='cube', collider='box', scale_y=3, origin_y=-.5, color=color.azure, x=-4)
-wall_right = duplicate(wall_left, x=4)
-camera.y = 2
-
-if __name__ == '__main__':
-    app.run()
+asyncio.run(main())

@@ -1,6 +1,6 @@
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
-import time
+import asyncio
 
 #colors
 red = color.red
@@ -9,7 +9,7 @@ blue = color.blue
 white = color.white
 
 #basic app setup and enviorment setup
-app = Ursina()
+app = Ursina(vsync = False,development_mode = True,editor_ui_enabled=True)
 player = FirstPersonController()
 sky = Sky()
 
@@ -50,7 +50,7 @@ class Voxel(Button):
                 if block_pick == 3: tex = brick_texture
                 if block_pick == 4: tex = stone_texture
                 voxel = Voxel(position= self.position + mouse.normal,texture = tex)
-         
+
 
 class Sky(Entity):
 
